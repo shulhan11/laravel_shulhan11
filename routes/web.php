@@ -18,15 +18,15 @@ use App\Http\Controllers\RumahsakitController;
 */
 
 Route::get('/', function () {
-    return view('templates.index', [
+    return view('dashboard.index', [
         'title' => 'Dashboard'
     ]);
-});
+})->middleware('auth');
 
-Route::resource('rumahsakit', RumahsakitController::class);
-Route::resource('pasien', PasienController::class);
+Route::resource('rumahsakit', RumahsakitController::class)->middleware('auth');
+Route::resource('pasien', PasienController::class)->middleware('auth');
 
-Route::get('/login', [LoginController::class, 'index'])->middleware('guest');
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'auth']);
 Route::post('/logout', [LoginController::class, 'logout']);
 

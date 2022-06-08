@@ -43,7 +43,7 @@
 
 @include('templates.sidebar')
 
-      @yield('body')
+@yield('body')
     </main>
   </div>
 </div>
