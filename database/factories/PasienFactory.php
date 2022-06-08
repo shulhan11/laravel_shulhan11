@@ -17,7 +17,10 @@ class PasienFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'rumahsakit_id' => mt_rand(1, 10),
+            'nama' => $this->faker->name(),
+            'alamat' => $this->faker->address(),
+            'telepon' => $this->faker->phoneNumber()
         ];
     }
 }

@@ -17,7 +17,11 @@ class RumahsakitFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'rumahsakit' => $this->faker->company(),
+            'alamat' => $this->faker->address(),
+            'email' => $this->faker->email(),
+            'telepon' => $this->faker->phoneNumber(),
+
         ];
     }
 }
